@@ -1,7 +1,7 @@
 # vertigo
 
 <p>a free tumblr theme inspired by twitter</p>
-<p><a href="https://sorrism.tumblr.com/vertigo">preview</a>
+<p><a href="https://sorrism.tumblr.com/vertigo_1">preview one</a> / <a href="https://sorrism.tumblr.com/vertigo_2">preview two</a>
 <p>features:</p>
 <ul>
 <li>optional header and icon image</li>
