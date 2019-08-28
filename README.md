@@ -8,7 +8,7 @@
 <li>3 custom links</li>
 <li>caption position options</li>
 <li>pagination / infinite scroll</li>
-<li>optional featured tags</li>
+  <li>some post width options</li>
 </ul>
 <p>notes:</p>
 <ul>
