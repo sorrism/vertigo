@@ -955,7 +955,7 @@ ol.notes li.note img.avatar {
 </header>
 
 <section>
-{block:Posts}<article id="{PostID}" class="{block:Date}dated{/block:Date} {block:caption}ccc wow{/block:caption} {block:Quote}wow{/block:Quote} {block:Text}wow{/block:Text} {block:Link}wow{/block:Link} {block:Chat}wow{/block:Chat} {block:Answer}wow{/block:Answer}">
+{block:Posts}<article id="{PostID}" class="{block:Date}dated{/block:Date} {block:caption}ccc wow{/block:caption} {block:Quote}wow{/block:Quote} {block:Text}wow{/block:Text} {block:Link}wow{/block:Link} {block:Chat}wow{/block:Chat} {block:Answer}wow{/block:Answer} post">
 
 {block:Date}
 {block:RebloggedFrom}<a class="im st" href="{ReblogRootURL}"><img src="{ReblogRootPortraitURL-128}"/></a>{/block:RebloggedFrom}{block:notreblog}<a class="im st" href="{permalink}"><img src="{PortraitURL-128}"/></a>{/block:notreblog}<div class="when">{block:RebloggedFrom}<a href="{ReblogRootURL}" class="bb">{ReblogRootTitle} <span>@ {ReblogRootName}</span></a>{/block:RebloggedFrom}{block:notreblog}<a class="bb" href="{permalink}">{BlogTitle}<span>@ {name}</span></a>{/block:notreblog}<a href="{Permalink}" target="_blank" class="tm">{timestamp}</a></div>
@@ -1008,29 +1008,28 @@ ol.notes li.note img.avatar {
 </article>
 
 
-{block:PermalinkPagination}<article class="pagination per">{block:PreviousPost}<a href="{PreviousPost}" class="bl {block:PreviousPost}nextt{/block:PreviousPost}"><span>next Post{block:nextpost} / {/block:nextpost}</span></a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="next bl"><span>prev Post</span></a>{/block:NextPost}</article>
+{block:PermalinkPagination}<article class="pag per">{block:PreviousPost}<a href="{PreviousPost}" class="bl {block:PreviousPost}nextt{/block:PreviousPost}"><span>next Post{block:nextpost} / {/block:nextpost}</span></a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="next bl"><span>prev Post</span></a>{/block:NextPost}</article>
 {/block:PermalinkPagination}
 
 {block:PostNotes} 
 <article class="pagenotes"><div class="title">{notecountwithlabel}</div><div id="in">{block:RebloggedFrom}via: <a href="{ReblogParentURL}">{ReblogParentName}</a>{block:ContentSource}<br>source: <a href="{ReblogRootURL}">{ReblogRootName}</a>{/block:ContentSource}{/block:RebloggedFrom}</div><div class="con">{PostNotes}</div></article>
 {/block:PostNotes}  
 
-</section>
+{/block:Posts}</section>
 
-{/block:Posts}
+
 
 <footer>
 <div class="page-load-status">
     <a class="infinite-scroll-last bl nomas" title="scroll to top"><span>End of Content</span></a>
     <a class="infinite-scroll-error bl nomas" title="scroll to top"><span>Oops! There was an error.</span></a>
-</div>{block:Pagination}<div class="pagination initial">{block:PreviousPage}<a href="{PreviousPage}" class="bl"><span>Prev Page{block:nextpage} / {/block:nextpage}</span></a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="{block:PreviousPage}nextt{/block:PreviousPage} next bl"><span>Next Page</span></a>{/block:NextPage}</div>{block:ifinfinitescroll}<div class="pagination initial"><a class="load bl">Load More Posts</a></div>{/block:ifinfinitescroll}{/block:Pagination}
-    
+</div>{block:Pagination}<div class="pagination pag initial">{block:PreviousPage}<a href="{PreviousPage}" class="bl"><span>Prev Page{block:nextpage} / {/block:nextpage}</span></a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="{block:PreviousPage}nextt{/block:PreviousPage} next bl"><span>Next Page</span></a>{/block:NextPage}</div>{block:ifinfinitescroll}<div class="pagination initial"><a class="load bl">Load More Posts</a></div>{/block:ifinfinitescroll}{/block:Pagination}
 </footer>
 
 
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script><script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>{block:indexpage}{block:ifinfinitescroll}<script src="https://unpkg.com/infinite-scroll@3.0.5/dist/infinite-scroll.pkgd.min.js"></script>{/block:ifinfinitescroll}{/block:indexpage}<script type="text/javascript" src="//static.tumblr.com/i5s2zks/9Acok8oo2/bct-timeago.min.js"></script><script src="https://static.tumblr.com/0podkko/jfMplm3f8/modified_photosets.js"></script><script src="https://unpkg.com/feather-icons@4.9.0/dist/feather.min.js"></script><script src="https://rawgit.com/robinpx/tumblr/master/scripts/flexibleFrames/flexibleFrames.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>{block:indexpage}{block:ifinfinitescroll}<script src="https://unpkg.com/infinite-scroll@3.0.5/dist/infinite-scroll.pkgd.min.js"></script>{/block:ifinfinitescroll}{/block:indexpage}<script type="text/javascript" src="//static.tumblr.com/i5s2zks/9Acok8oo2/bct-timeago.min.js"></script><script src="https://static.tumblr.com/0podkko/jfMplm3f8/modified_photosets.js"></script><script src="https://unpkg.com/feather-icons@4.9.0/dist/feather.min.js"></script><script src="https://rawgit.com/robinpx/tumblr/master/scripts/flexibleFrames/flexibleFrames.min.js"></script>
 <script>
 switch(window.location.pathname) {
     case "/":
@@ -1051,15 +1050,10 @@ function notes() {
        else if (n <= 999) {$(this).text(n);}
     });
 }
-function showposts() {    
-    var els = $('article'),
-    i = 0,
-    f = function () {
-        $(els[i++]).addClass('loaded');
-        if(i < els.length) setTimeout(f, 50);
-    };
-    f();  
-}
+function showposts() {$('.post:not(.appended)').each(function(){
+    $(this).addClass('loaded');
+    return this
+});}
 function showfooter() {$('footer').addClass('loaded');}
 function showheader() {$('header').addClass('loaded');}
 function flexFrame() {
@@ -1151,21 +1145,21 @@ $(document).ready(function(){
     answer_urls('', '.comment', '.user'); 
     reply_count();  
     {block:ifTextPostThread}chain_reblog();{/block:ifTextPostThread}     
-    var $container = $('section');  
     setTimeout(showheader,300);
     setTimeout(showposts, 500);
     setTimeout(showfooter, 600);     
     {block:indexpage}    
     $('.nomas').click(function() {$('body, html').animate({scrollTop:0},1000);});         
+    var $container = $('section'); 
 {block:ifinfinitescroll} 
     var $grid = $container.infiniteScroll({
-        append: 'article',
+        append: '.post',
         path: '.pagination a.next',
         status: '.page-load-status',
         hideNav: '.pagination',
-        button:'.load',
         {block:ifmanualload}
-        loadOnScroll: false,
+        scrollThreshold:false,
+        button:'.load',        
         {/block:ifmanualload}    
     });
     $grid.on( 'request.infiniteScroll', function( event, path ) {
@@ -1180,10 +1174,6 @@ $(document).ready(function(){
         $newElems.find($audio).load(function() {
             $(this).contents().find('head').append('<style type="text/css">' + '.audio-player { background: {color:accents}; color: {color:text} !important; }' + '</style>');
         }); 
-        $container.imagesLoaded().done( function() {
-            setTimeout(showposts,100); 
-            setTimeout(showfooter,400);
-        });
         $newElems.find('.tm').timeAgo({
             time:"short",
             spaces:true,
@@ -1195,7 +1185,9 @@ $(document).ready(function(){
         reply_count();      
         {block:ifTextPostThread}chain_reblog();{/block:ifTextPostThread}
         $newElems.find('p').filter(function (){return $.trim(this.innerHTML) == ""}).remove(); 
-        feather.replace();         
+        feather.replace();  
+        setTimeout(showposts, 500);
+        setTimeout(showfooter, 600);         
     });    
     var $nextLink = $('.pagination a.next');
     if ( !$nextLink.length ) {
