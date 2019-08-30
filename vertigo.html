@@ -8,6 +8,7 @@
 -->
 
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
 <title>{block:TagPage}#{Tag} : {/block:TagPage} {block:PostSummary}{PostSummary} : {/block:PostSummary}{Title}</title>
@@ -17,7 +18,7 @@
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
 {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!--Default Variables-->
 
@@ -450,7 +451,7 @@ footer {
     display:none;
 {/block:ifnotmanualload}    
 {/block:ifinfinitescroll}    
-    margin:0 auto 75px auto;
+    margin-bottom:75px;
     font-size:.9em;
     width:{select:post width}px;
     background:{color:posts};    
