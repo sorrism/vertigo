@@ -1008,14 +1008,17 @@ ol.notes li.note img.avatar {
 </article>
 
 
-{block:PermalinkPagination}<article class="pag per">{block:PreviousPost}<a href="{PreviousPost}" class="bl {block:PreviousPost}nextt{/block:PreviousPost}"><span>next Post{block:nextpost} / {/block:nextpost}</span></a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="next bl"><span>prev Post</span></a>{/block:NextPost}</article>
+
+{/block:Posts}
+
+{block:PermalinkPagination}<article class="pag per loaded">{block:PreviousPost}<a href="{PreviousPost}" class="bl {block:PreviousPost}nextt{/block:PreviousPost}"><span>next Post{block:nextpost} / {/block:nextpost}</span></a>{/block:PreviousPost}{block:NextPost}<a href="{NextPost}" class="next bl"><span>prev Post</span></a>{/block:NextPost}</article>
 {/block:PermalinkPagination}
 
 {block:PostNotes} 
-<article class="pagenotes"><div class="title">{notecountwithlabel}</div><div id="in">{block:RebloggedFrom}via: <a href="{ReblogParentURL}">{ReblogParentName}</a>{block:ContentSource}<br>source: <a href="{ReblogRootURL}">{ReblogRootName}</a>{/block:ContentSource}{/block:RebloggedFrom}</div><div class="con">{PostNotes}</div></article>
-{/block:PostNotes}  
-
-{/block:Posts}</section>
+<article class="pagenotes loaded"><div class="title">{notecountwithlabel}</div><div id="in">{block:RebloggedFrom}via: <a href="{ReblogParentURL}">{ReblogParentName}</a>{block:ContentSource}<br>source: <a href="{ReblogRootURL}">{ReblogRootName}</a>{/block:ContentSource}{/block:RebloggedFrom}</div><div class="con">{PostNotes}</div></article>
+{/block:PostNotes}     
+    
+</section>
 
 
 
