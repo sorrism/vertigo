@@ -17,6 +17,8 @@
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
 {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!--Default Variables-->
 
 <meta name="color:Background" content="#f8f8f8"/>
@@ -297,13 +299,27 @@ header, footer, article {
     opacity:1!important;
 }  
 
-.sub .cont {margin:0;}
+@media screen and (max-width:675px) {
+    .w540 .cont {margin:0;}
+    .w540 article, .w540 header, .w540 footer {width:calc(100vw - 135px);}
 
-.sub article, .sub header, .sub footer {
-    width:calc(100vw - 135px);
+    .w540 header .h img {width:calc(100vw);}
 }
 
-.sub header .h img {width:calc(100vw);}
+@media screen and (max-width:635px) {
+    .w500 .cont {margin:0;}
+    .w500 article, .w500 header, .w500 footer {width:calc(100vw - 135px);}
+
+    .w500 header .h img {width:calc(100vw);}
+}
+
+@media screen and (max-width:585px) {
+    .w450 .cont {margin:0;}
+    .w450 article, .w450 header, .w450 footer {width:calc(100vw - 135px);}
+
+    .w450 header .h img {width:calc(100vw);}
+}
+ 
 
 /*side*/
 
@@ -947,7 +963,7 @@ ol.notes li.note img.avatar {
     
 </head>
 
-<body><div class="cc"><i data-feather="settings"></i></div>
+<body class="w{select:post width}"><div class="cc"><i data-feather="settings"></i></div>
 
 <div class="cont {block:indexpage}ii{/block:indexpage}{block:PermalinkPagination}pp{/block:PermalinkPagination}">
 
@@ -1114,20 +1130,7 @@ function reply_count() {
     });
     feather.replace();     
 }
-var selectedwidths = {select:post width} + 135;
-if ($(window).width() < selectedwidths) {
-    $('body').addClass('sub');
-}
 $(document).ready(function(){
-    var selectedwidth = {select:post width} + 135;
-    $(window).on('resize', function() {
-        if($(window).width() < selectedwidth) {
-            $('body').addClass('sub');
-        }
-        if ($(window).width() >= selectedwidth) {
-            $('body').removeClass('sub');
-        }
-    });     
     feather.replace();     
     $('body').tooltip({track:true});     
     initPhotosets(); 
